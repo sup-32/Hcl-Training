@@ -1,0 +1,41 @@
+package com.hcl.task5;
+
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
+
+public class SetMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Set<String>setlist=new HashSet<>();
+		String ch;
+		Scanner sc=new Scanner(System.in);
+		String[] names=new String[4];
+		for(int i=0;i<4;i++)
+		{
+			System.out.println("Enter the UserName"+(i+1));
+			String name=sc.next();
+			setlist.add(name);
+			System.out.println("Do You Want to continue?(y/n)");
+			ch=sc.next();
+		}
+	    Set<String>newlist=new HashSet<>();
+	    int count=0;
+	    for(String list:setlist)
+	    {
+	    	if(!newlist.contains(list))
+	    	{
+	    		newlist.add(list);
+	    		count++;
+	    	}
+	    }
+	    for(String listName:newlist)
+	    {
+		System.out.println("The unique number of username are"+listName);
+	    }
+
+	}
+
+}
+

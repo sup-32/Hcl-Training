@@ -1,0 +1,42 @@
+package com.work;
+
+import java.util.Scanner;
+
+public class Main1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated 
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Choose Stall Type:");
+		System.out.println("1)Gold Stall\n2)Premium Stall\n3)Executive Stall");
+		int ch=sc.nextInt();
+		sc.nextLine();
+		if(ch==1)
+		{
+			String stallDet=null;
+		System.out.println("Enter the details in comma seperated(Stall Name,Stall Cost,Stall Owner Name,Number of TV sets");
+		String stall[]=stallDet.split(",");
+		Stall goldStall=new GoldStall(stall[0],Integer.parseInt(stall[1]),stall[2],Integer.parseInt(stall[3]));
+		goldStall.display();
+		}
+		else if(ch==2) {
+			String stallDet=null;
+			System.out.println("Enter the details in comma seperated(Stall Name,Stall Cost,Stall Owner Name,Number of projectors");
+			String stall[]=stallDet.split(",");
+			Stall premiumStall= new PremiumStall(stall[0],Integer.parseInt(stall[1]),stall[2],Integer.parseInt(stall[3])); 
+			premiumStall.display();
+		}
+		else
+		{ 
+			String stallDet=null;
+			System.out.println("Enter the details in comma seperated(Stall Name,Stall Cost,Stall Owner Name,Number of Screens");
+			String stall[]=stallDet.split(",");
+			Stall executiveStall= new ExecutiveStall(stall[0],Integer.parseInt(stall[1]),stall[2],Integer.parseInt(stall[3])); 
+			executiveStall.display();
+			
+		}
+			
+		}
+		
+
+}

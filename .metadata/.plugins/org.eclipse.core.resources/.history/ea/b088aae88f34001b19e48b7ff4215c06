@@ -1,0 +1,25 @@
+package com.hcl.task5;
+
+import java.util.List;
+import java.util.Scanner;
+
+public class ItemTypeMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		List<ItemType>items=readData();
+		printData(items);
+		}
+
+	private static void printData(List<ItemType> items) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static List<ItemType> readData() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

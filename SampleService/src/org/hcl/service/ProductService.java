@@ -1,0 +1,12 @@
+package org.hcl.service;
+
+import java.util.List;
+
+import org.hcl.domain.Product;
+
+public interface ProductService {
+	boolean insertProduct(Product product);
+	boolean removeProduct(int productid);
+	List<Product> getProducts();
+
+}

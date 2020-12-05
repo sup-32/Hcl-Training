@@ -1,0 +1,65 @@
+package org.hcl.service;
+
+import static org.junit.Assert.*;
+
+import java.util.List;
+
+import org.hcl.domain.Product;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.FixMethodOrder;
+import org.junit.Ignore;
+import org.junit.runners.MethodSorters;
+
+public class Test {
+	@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+	public class CustomerServiceImplTest {
+		static ProductService service = null;
+
+		@Before
+		public void beforeEach() {
+			service = new ProductServiceImplementation();
+		}
+
+		@After
+		public void afterEach() {
+			service = null;
+		}
+
+		@Test
+		public void testAddCustomer() {
+			Product product = new Product(1, "suresh", "chennai");
+			boolean b = service.insertProduct(product);
+			assertTrue(b);
+		}
+
+		@Test
+		public void testNotInsertProduct() {
+			Product product = null;
+			boolean b = service.insertProduct(product);
+			assertFalse(b);
+
+		}
+
+		@Test(expected = CustomerNotFound.class)
+		@Ignore
+		public void testRemoveProduct() {
+			int id = 1;
+			boolean b = service.removeProduct(id);
+			assertTrue(b);
+		}
+
+		@Test
+		public void testGetProducts() {
+			List<Product> products = service.getProducts();
+			assertNotNull(products);
+		}
+
+@Test
+public void testGetProducts_Not_Getting_Products() {
+List<Product> products=service.getProducts();
+if(products==null)
+assertNull(products);
+else
+assertNotNull(products);
+}

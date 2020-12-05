@@ -1,0 +1,5 @@
+package org.hcl.domain;
+
+public class Employee {
+
+}

@@ -1,0 +1,47 @@
+package com.hcl.task5;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class ItemTypeMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		List<ItemType>items=readData();
+		printData(items);
+		}
+
+	private static void printData(List<ItemType> items) {
+		// TODO Auto-generated method stub
+		System.out.println("");
+		
+	}
+
+	private static List<ItemType> readData() {
+		// TODO Auto-generated method stub
+		String ch;
+		String name;
+		double deposit,costPerDay;
+		List<ItemType>items=new ArrayList<>();
+		Scanner sc=new Scanner(System.in);
+		for(int i=0;i<2;i++)
+		{
+		System.out.println("Enter the Details of ItemType"+(i+1));
+		name=sc.next();
+		sc.nextLine();
+		deposit=sc.nextDouble();
+		costPerDay=sc.nextDouble();
+		ItemType t=new ItemType();
+		t.setName(name);
+		t.setDeposit(deposit);
+		t.setCostPerDay(costPerDay);
+		items.add(t);
+		System.out.println("Do you wnat to continue?(y/n)");
+		ch=sc.next();
+	}
+		return items;
+
+}
+}

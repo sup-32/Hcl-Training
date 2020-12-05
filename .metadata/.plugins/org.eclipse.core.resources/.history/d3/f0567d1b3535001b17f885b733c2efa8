@@ -1,0 +1,6 @@
+package org.hcl.domain;
+
+public class Customer {
+	
+
+}
